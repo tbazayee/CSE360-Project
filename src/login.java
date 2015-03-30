@@ -3,8 +3,9 @@
  */
 // 
 import java.util.Scanner;
+//Tsega dfsjk lj
 public class login //extends User
-{  // Tsega 
+{  
 	//class variables
 	private int attempt;
 	private String [] questions= new String [3];
