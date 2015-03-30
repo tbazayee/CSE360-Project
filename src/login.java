@@ -1,10 +1,10 @@
 /* Login Functionality
  * Some parts of this class has been commented because it requires other classes to be compiled successfully.
  */
-
+// 
 import java.util.Scanner;
 public class login //extends User
-{
+{  // Tsega 
 	//class variables
 	private int attempt;
 	private String [] questions= new String [3];
