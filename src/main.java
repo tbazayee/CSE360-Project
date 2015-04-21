@@ -13,6 +13,7 @@ public class main {
 		int psypt1[] = new int[7];
 		int psypt2[] = new int[7];
 		int thresh[] = new int[7];
+		String dname ="Doc1";
 		for (int i =0; i<7; i++)
 		{
 			sypt[i]= i;
@@ -22,8 +23,8 @@ public class main {
 		}
 		
 		ArrayList<String[]> names = new ArrayList<String[]>();
-		D1.addPatient("Jone", "Doe1", 1, "JD", "pass", "City Born", "Minn", sypt, psypt1,psypt2, thresh);
-		names=D1.getPatientsNameList();
+		D1.addPatient("Jone456fgh", "Doe1", 1, "JD", "pass", "City Born", "Minn", sypt, psypt1,psypt2, thresh,dname);
+		names=D1.getPatientsNameList(); 
 		//for (int j = 0; j <2; j++)
 		D1.removePatientFromDB("Jone", "What");
 		//{

@@ -68,7 +68,7 @@ public class Database
      			   " SYMPTOM1Thresh   INT DEFAULT 10,"+ " SYMPTOM2Thresh   INT DEFAULT 10,"+ 
      			   " SYMPTOM3Thresh   INT DEFAULT 10,"+" SYMPTOM4Thresh   INT DEFAULT 10,"+
      			   " SYMPTOM5Thresh   INT DEFAULT 10,"+" SYMPTOM6Thresh   INT DEFAULT 10,"+
-     			   " SYMPTOM7Thresh   INT DEFAULT 10)";
+     			   " SYMPTOM7Thresh   INT DEFAULT 10, DOCTORSNAME  TEXT)";
      //
      stmt.executeUpdate(sql1);
 	  }
@@ -79,146 +79,22 @@ public class Database
 	  }
 		
 	}
-//  public static void main( String args[] )
-//  {
-//
-//    String sql=null;
-//
-//    initializeDatabase();
-//
-//		     try{
-//    			sql = "INSERT INTO PATIENTDATA (FIRSTNAME,LASTNAME,AGE,USERNAME,PASSWORD,SECURITYQN,SECURITYANS,SYMPTOM1,"+
-//    					"SYMPTOM2,SYMPTOM3,SYMPTOM4,SYMPTOM5,SYMPTOM6,SYMPTOM7,"+
-//    					"PrevSYMPTOM1_1,PrevSYMPTOM1_2,PrevSYMPTOM1_3,PrevSYMPTOM1_4,PrevSYMPTOM1_5,PrevSYMPTOM1_6,PrevSYMPTOM1_7,"+
-//    					"PrevSYMPTOM2_1,PrevSYMPTOM2_2,PrevSYMPTOM2_3,PrevSYMPTOM2_4,PrevSYMPTOM2_5,PrevSYMPTOM2_6,PrevSYMPTOM2_7,"+
-//    					"SYMPTOM1Thresh,SYMPTOM2Thresh,SYMPTOM3Thresh,"+
-//    					"SYMPTOM4Thresh,SYMPTOM5Thresh,SYMPTOM6Thresh,SYMPTOM7Thresh) " +
-//    					"VALUES ('Jackson','Paul', 32,'pjackson','pj1234','Mothers Name?','Jane',3,0,1,4,3,10,0,3,6,2,1,7,0,13,0,1,4,3,10,0,3,6,2,1,7,0,1,4);"; 
-//		      
-//				stmt.executeUpdate(sql);
-//
-//			  sql = "INSERT INTO PATIENTDATA (FIRSTNAME,LASTNAME,AGE,USERNAME,PASSWORD,SECURITYQN,SECURITYANS,SYMPTOM1,SYMPTOM2,SYMPTOM3,SYMPTOM4,SYMPTOM5,SYMPTOM6,SYMPTOM7,"+
-//  					"PrevSYMPTOM1_1,PrevSYMPTOM1_2,PrevSYMPTOM1_3,PrevSYMPTOM1_4,PrevSYMPTOM1_5,PrevSYMPTOM1_6,PrevSYMPTOM1_7,"+
-//  					"PrevSYMPTOM2_1,PrevSYMPTOM2_2,PrevSYMPTOM2_3,PrevSYMPTOM2_4,PrevSYMPTOM2_5,PrevSYMPTOM2_6,PrevSYMPTOM2_7,"+					  
-//					  "SYMPTOM1Thresh,SYMPTOM2Thresh,SYMPTOM3Thresh,SYMPTOM4Thresh,SYMPTOM5Thresh,SYMPTOM6Thresh,SYMPTOM7Thresh) " +
-//			         "VALUES ('Robinson', 'Mark', 32, 'mrobinson', 'mr1234','Mothers Name?', 'Jessica',3,0,1,4,3,10,0,1,2,3,4,5,6,10,3,0,1,4,3,10,0,1,2,3,4,5,6,10);"; 
-//			 stmt.executeUpdate(sql);
-//			// c.commit();
-//			  sql = "INSERT INTO PATIENTDATA (FIRSTNAME,LASTNAME,AGE,USERNAME,PASSWORD,SECURITYQN,SECURITYANS,SYMPTOM1,SYMPTOM2,SYMPTOM3,SYMPTOM4,SYMPTOM5,SYMPTOM6,SYMPTOM7,"+
-//  					"PrevSYMPTOM1_1,PrevSYMPTOM1_2,PrevSYMPTOM1_3,PrevSYMPTOM1_4,PrevSYMPTOM1_5,PrevSYMPTOM1_6,PrevSYMPTOM1_7,"+
-//  					"PrevSYMPTOM2_1,PrevSYMPTOM2_2,PrevSYMPTOM2_3,PrevSYMPTOM2_4,PrevSYMPTOM2_5,PrevSYMPTOM2_6,PrevSYMPTOM2_7,"+					  	
-//					  "SYMPTOM1Thresh,SYMPTOM2Thresh,SYMPTOM3Thresh,SYMPTOM4Thresh,SYMPTOM5Thresh,SYMPTOM6Thresh,SYMPTOM7Thresh) " +
-//				         "VALUES ('Parker', 'Paul', 32, 'pparker', 'pp1234&^%','Mothers Name?', 'Paulina',1,9,4,6,5,4,1,6,7,9,1,3,6,9,1,9,4,6,5,4,1,6,7,9,1,3,6,9);"; 
-//			 stmt.executeUpdate(sql);
-//			 //c.commit();
-//			  sql = "INSERT INTO PATIENTDATA (FIRSTNAME,LASTNAME,AGE,USERNAME,PASSWORD,SECURITYQN,SECURITYANS,SYMPTOM1,SYMPTOM2,SYMPTOM3,SYMPTOM4,SYMPTOM5,SYMPTOM6,SYMPTOM7,"+
-//  					"PrevSYMPTOM1_1,PrevSYMPTOM1_2,PrevSYMPTOM1_3,PrevSYMPTOM1_4,PrevSYMPTOM1_5,PrevSYMPTOM1_6,PrevSYMPTOM1_7,"+
-//  					"PrevSYMPTOM2_1,PrevSYMPTOM2_2,PrevSYMPTOM2_3,PrevSYMPTOM2_4,PrevSYMPTOM2_5,PrevSYMPTOM2_6,PrevSYMPTOM2_7,"+
-//					  "SYMPTOM1Thresh,SYMPTOM2Thresh,SYMPTOM3Thresh,SYMPTOM4Thresh,SYMPTOM5Thresh,SYMPTOM6Thresh,SYMPTOM7Thresh) " +
-//				         "VALUES ('Doe', 'John', 32, 'jdoe', 'jd1234','Mothers Name?', 'Rita',4,9,0,1,8,0,6,1,9,4,6,5,4,1,4,9,0,1,8,0,6,1,9,4,6,5,4,1);"; 
-//			 String kpl = "INSERT INTO PATIENTDATA (FIRSTNAME,LASTNAME,AGE,USERNAME,PASSWORD,SECURITYQN,SECURITYANS,SYMPTOM1,SYMPTOM2,SYMPTOM3,SYMPTOM4,SYMPTOM5,SYMPTOM6,SYMPTOM7,SYMPTOM1Thresh,SYMPTOM2Thresh,SYMPTOM3Thresh,SYMPTOM4Thresh,SYMPTOM5Thresh,SYMPTOM6Thresh,SYMPTOM7Thresh) ";
-//			 String name1="FnamePatien1";
-//			 String lasname= "LstnamePatient1";
-//			 String unam= "USERNAMEPatien1";
-//			 String pas= "PassPatient1";
-//			 String sec= "secQuestion?";
-//			 String secAns= "secAns";
-//			 
-//			 kpl = kpl+"VALUES ('"+name1+"', '"+lasname+"', "+25+", '"+unam+"', '"+pas+"', '"+sec+"', '"+secAns+"',1,2,3,4,5,6,7,1,9,4,6,5,4,1);";
-//			 System.out.println(kpl);
-//			 System.out.println(kpl);
-//			 stmt.executeUpdate(kpl);
-//			 
-//			 kpl = "UPDATE PATIENTDATA set SECURITYANS  = 'wHAHAHA' where FIRSTNAME='Parker';";
-//			 stmt.executeUpdate(kpl);
-//			 //	 name1= "Teddy";
-//		//	 sql = "DELETE from PATIENT where name='"+name1+"';";
-//		//     stmt.executeUpdate(sql);
-//		//     c.commit();
-//		     
-//			ResultSet rs = stmt.executeQuery( "SELECT * FROM PATIENTDATA;" );
-//			//int[] id1 = null;
-//			ArrayList<String> fname = new ArrayList<String>();
-//			int i=0;
-//			//String[] name2=null;
-//			ArrayList<String> lname = new ArrayList<String>();
-//			//int[] age1= null;
-//			ArrayList<Integer> age1= new ArrayList<Integer>();
-//			
-//			//String[] address1 = null;
-//			ArrayList<String> userName = new ArrayList<String>();
-//			
-//			//double[] Salary1= null;
-//			ArrayList<String> password = new ArrayList<String>();
-//			
-//			ArrayList<String> secQ = new ArrayList<String>();
-//			
-//			ArrayList<String> secA = new ArrayList<String>();
-//			while (rs.next())
-//			 {
-//				 String lastname= rs.getString("lastname");
-//				 String fname1 = rs.getString("firstname");
-//				 int age = rs.getInt("age");
-//				 String usrname= rs.getString("username");
-//				 String pass1= rs.getString("password");
-//				 String secq1 = rs.getString("Securityqn");
-//				 String secAns1 = rs.getString("SecurityAns");
-//				 
-//				 //if (fname1.equals("Parker"))
-//				// {
-//					fname.add(fname1);
-//					lname.add(lastname);
-//					age1.add(age);
-//					userName.add(usrname);
-//					password.add(pass1);
-//					secQ.add(secq1);
-//					secA.add(secAns1);
-//					i++;
-//				// }
-//				 
-//			 }
-//			
-//			for (int f =0; f<i; f++)
-//			{
-//				System.out.println("First Name= "+fname.get(f)+"\tLast Name= "+lname.get(f)+"\tAGE= "+age1.get(f)+"\tUsername= "+userName.get(f)+"\tPassword= "+password.get(f)+"\tSecQuetion= "+secQ.get(f)+"\tSecAnswer= "+secA.get(f));
-//			}
-//			System.out.println("i ="+i);
-//	
-//			ArrayList<String[]> names = new ArrayList<String[]>();
-//			names=getPatientsNameList();
-//			//for (int j = 0; j <2; j++)
-//			//{
-//			String names1[];
-//				for (int k=0; k<names.size();k++)
-//				{
-//					names1 = names.get(k);
-//					System.out.println("Frist Name:   "+names1[0]+"   Last Name:    "+names1[1]);
-//				}
-//				
-//			//}
-//			
-//	}
-//      catch (SQLException e) 
-//    {
-//		// TODO Auto-generated catch block
-//		e.printStackTrace();
-//	}
-//  }
+
   //////////////////////////////////////////////////////////////////
   //////  FUNCTION NAME: addPatient()
   ////////////////////////////////////////////////////////////////////////////////////
-  public void addPatient(String name,String lasname, int age, String unam, String pas, String sec, String secAns, int sympt[],int prevSm1[],int prevSm2[],int threshold[])
+  public void addPatient(String name,String lasname, int age, String unam, String pas, String sec, String secAns, int sympt[],int prevSm1[],int prevSm2[],int threshold[], String dname)
   {
 	  String newPat = "INSERT INTO PATIENTDATA (FIRSTNAME,LASTNAME,AGE,USERNAME,PASSWORD,SECURITYQN,SECURITYANS,"+
 			  		  "SYMPTOM1,SYMPTOM2,SYMPTOM3,SYMPTOM4,SYMPTOM5,SYMPTOM6,SYMPTOM7,"+
   					"PrevSYMPTOM1_1,PrevSYMPTOM1_2,PrevSYMPTOM1_3,PrevSYMPTOM1_4,PrevSYMPTOM1_5,PrevSYMPTOM1_6,PrevSYMPTOM1_7,"+
   					"PrevSYMPTOM2_1,PrevSYMPTOM2_2,PrevSYMPTOM2_3,PrevSYMPTOM2_4,PrevSYMPTOM2_5,PrevSYMPTOM2_6,PrevSYMPTOM2_7,"+
-			  		  "SYMPTOM1Thresh,SYMPTOM2Thresh,SYMPTOM3Thresh,SYMPTOM4Thresh,SYMPTOM5Thresh,SYMPTOM6Thresh,SYMPTOM7Thresh) ";
+			  		  "SYMPTOM1Thresh,SYMPTOM2Thresh,SYMPTOM3Thresh,SYMPTOM4Thresh,SYMPTOM5Thresh,SYMPTOM6Thresh,SYMPTOM7Thresh, DOCTORSNAME) ";
 	  newPat = newPat+"VALUES ('"+name+"', '"+lasname+"', "+age+", '"+unam+"', '"+pas+"', '"+sec+"', '"+secAns+"',"
 			  		  +sympt[0]+","+sympt[1]+","+sympt[2]+","+sympt[3]+","+sympt[4]+","+sympt[5]+","+sympt[6]+
 			  			"," +prevSm1[0]+","+prevSm1[1]+","+prevSm1[2]+","+prevSm1[3]+","+prevSm1[4]+","+prevSm1[5]+","+prevSm1[6]+","
 			  			+prevSm2[0]+","+prevSm2[1]+","+prevSm2[2]+","+prevSm2[3]+","+prevSm2[4]+","+prevSm2[5]+","+prevSm2[6]+","
-			  			+threshold[0]+","+threshold[1]+","+threshold[2]+","+threshold[3]+","+threshold[4]+","+threshold[5]+","+threshold[6]+");";
+			  			+threshold[0]+","+threshold[1]+","+threshold[2]+","+threshold[3]+","+threshold[4]+","+threshold[5]+","+threshold[6]+",'"+dname+"');";
 	  
 	  try {
 		stmt.executeUpdate(newPat);
@@ -405,3 +281,130 @@ public class Database
 	}
   }
 }*/
+
+
+//public static void main( String args[] )
+//{
+//
+//String sql=null;
+//
+//initializeDatabase();
+//
+//	     try{
+//			sql = "INSERT INTO PATIENTDATA (FIRSTNAME,LASTNAME,AGE,USERNAME,PASSWORD,SECURITYQN,SECURITYANS,SYMPTOM1,"+
+//					"SYMPTOM2,SYMPTOM3,SYMPTOM4,SYMPTOM5,SYMPTOM6,SYMPTOM7,"+
+//					"PrevSYMPTOM1_1,PrevSYMPTOM1_2,PrevSYMPTOM1_3,PrevSYMPTOM1_4,PrevSYMPTOM1_5,PrevSYMPTOM1_6,PrevSYMPTOM1_7,"+
+//					"PrevSYMPTOM2_1,PrevSYMPTOM2_2,PrevSYMPTOM2_3,PrevSYMPTOM2_4,PrevSYMPTOM2_5,PrevSYMPTOM2_6,PrevSYMPTOM2_7,"+
+//					"SYMPTOM1Thresh,SYMPTOM2Thresh,SYMPTOM3Thresh,"+
+//					"SYMPTOM4Thresh,SYMPTOM5Thresh,SYMPTOM6Thresh,SYMPTOM7Thresh) " +
+//					"VALUES ('Jackson','Paul', 32,'pjackson','pj1234','Mothers Name?','Jane',3,0,1,4,3,10,0,3,6,2,1,7,0,13,0,1,4,3,10,0,3,6,2,1,7,0,1,4);"; 
+//	      
+//			stmt.executeUpdate(sql);
+//
+//		  sql = "INSERT INTO PATIENTDATA (FIRSTNAME,LASTNAME,AGE,USERNAME,PASSWORD,SECURITYQN,SECURITYANS,SYMPTOM1,SYMPTOM2,SYMPTOM3,SYMPTOM4,SYMPTOM5,SYMPTOM6,SYMPTOM7,"+
+//					"PrevSYMPTOM1_1,PrevSYMPTOM1_2,PrevSYMPTOM1_3,PrevSYMPTOM1_4,PrevSYMPTOM1_5,PrevSYMPTOM1_6,PrevSYMPTOM1_7,"+
+//					"PrevSYMPTOM2_1,PrevSYMPTOM2_2,PrevSYMPTOM2_3,PrevSYMPTOM2_4,PrevSYMPTOM2_5,PrevSYMPTOM2_6,PrevSYMPTOM2_7,"+					  
+//				  "SYMPTOM1Thresh,SYMPTOM2Thresh,SYMPTOM3Thresh,SYMPTOM4Thresh,SYMPTOM5Thresh,SYMPTOM6Thresh,SYMPTOM7Thresh) " +
+//		         "VALUES ('Robinson', 'Mark', 32, 'mrobinson', 'mr1234','Mothers Name?', 'Jessica',3,0,1,4,3,10,0,1,2,3,4,5,6,10,3,0,1,4,3,10,0,1,2,3,4,5,6,10);"; 
+//		 stmt.executeUpdate(sql);
+//		// c.commit();
+//		  sql = "INSERT INTO PATIENTDATA (FIRSTNAME,LASTNAME,AGE,USERNAME,PASSWORD,SECURITYQN,SECURITYANS,SYMPTOM1,SYMPTOM2,SYMPTOM3,SYMPTOM4,SYMPTOM5,SYMPTOM6,SYMPTOM7,"+
+//					"PrevSYMPTOM1_1,PrevSYMPTOM1_2,PrevSYMPTOM1_3,PrevSYMPTOM1_4,PrevSYMPTOM1_5,PrevSYMPTOM1_6,PrevSYMPTOM1_7,"+
+//					"PrevSYMPTOM2_1,PrevSYMPTOM2_2,PrevSYMPTOM2_3,PrevSYMPTOM2_4,PrevSYMPTOM2_5,PrevSYMPTOM2_6,PrevSYMPTOM2_7,"+					  	
+//				  "SYMPTOM1Thresh,SYMPTOM2Thresh,SYMPTOM3Thresh,SYMPTOM4Thresh,SYMPTOM5Thresh,SYMPTOM6Thresh,SYMPTOM7Thresh) " +
+//			         "VALUES ('Parker', 'Paul', 32, 'pparker', 'pp1234&^%','Mothers Name?', 'Paulina',1,9,4,6,5,4,1,6,7,9,1,3,6,9,1,9,4,6,5,4,1,6,7,9,1,3,6,9);"; 
+//		 stmt.executeUpdate(sql);
+//		 //c.commit();
+//		  sql = "INSERT INTO PATIENTDATA (FIRSTNAME,LASTNAME,AGE,USERNAME,PASSWORD,SECURITYQN,SECURITYANS,SYMPTOM1,SYMPTOM2,SYMPTOM3,SYMPTOM4,SYMPTOM5,SYMPTOM6,SYMPTOM7,"+
+//					"PrevSYMPTOM1_1,PrevSYMPTOM1_2,PrevSYMPTOM1_3,PrevSYMPTOM1_4,PrevSYMPTOM1_5,PrevSYMPTOM1_6,PrevSYMPTOM1_7,"+
+//					"PrevSYMPTOM2_1,PrevSYMPTOM2_2,PrevSYMPTOM2_3,PrevSYMPTOM2_4,PrevSYMPTOM2_5,PrevSYMPTOM2_6,PrevSYMPTOM2_7,"+
+//				  "SYMPTOM1Thresh,SYMPTOM2Thresh,SYMPTOM3Thresh,SYMPTOM4Thresh,SYMPTOM5Thresh,SYMPTOM6Thresh,SYMPTOM7Thresh) " +
+//			         "VALUES ('Doe', 'John', 32, 'jdoe', 'jd1234','Mothers Name?', 'Rita',4,9,0,1,8,0,6,1,9,4,6,5,4,1,4,9,0,1,8,0,6,1,9,4,6,5,4,1);"; 
+//		 String kpl = "INSERT INTO PATIENTDATA (FIRSTNAME,LASTNAME,AGE,USERNAME,PASSWORD,SECURITYQN,SECURITYANS,SYMPTOM1,SYMPTOM2,SYMPTOM3,SYMPTOM4,SYMPTOM5,SYMPTOM6,SYMPTOM7,SYMPTOM1Thresh,SYMPTOM2Thresh,SYMPTOM3Thresh,SYMPTOM4Thresh,SYMPTOM5Thresh,SYMPTOM6Thresh,SYMPTOM7Thresh) ";
+//		 String name1="FnamePatien1";
+//		 String lasname= "LstnamePatient1";
+//		 String unam= "USERNAMEPatien1";
+//		 String pas= "PassPatient1";
+//		 String sec= "secQuestion?";
+//		 String secAns= "secAns";
+//		 
+//		 kpl = kpl+"VALUES ('"+name1+"', '"+lasname+"', "+25+", '"+unam+"', '"+pas+"', '"+sec+"', '"+secAns+"',1,2,3,4,5,6,7,1,9,4,6,5,4,1);";
+//		 System.out.println(kpl);
+//		 System.out.println(kpl);
+//		 stmt.executeUpdate(kpl);
+//		 
+//		 kpl = "UPDATE PATIENTDATA set SECURITYANS  = 'wHAHAHA' where FIRSTNAME='Parker';";
+//		 stmt.executeUpdate(kpl);
+//		 //	 name1= "Teddy";
+//	//	 sql = "DELETE from PATIENT where name='"+name1+"';";
+//	//     stmt.executeUpdate(sql);
+//	//     c.commit();
+//	     
+//		ResultSet rs = stmt.executeQuery( "SELECT * FROM PATIENTDATA;" );
+//		//int[] id1 = null;
+//		ArrayList<String> fname = new ArrayList<String>();
+//		int i=0;
+//		//String[] name2=null;
+//		ArrayList<String> lname = new ArrayList<String>();
+//		//int[] age1= null;
+//		ArrayList<Integer> age1= new ArrayList<Integer>();
+//		
+//		//String[] address1 = null;
+//		ArrayList<String> userName = new ArrayList<String>();
+//		
+//		//double[] Salary1= null;
+//		ArrayList<String> password = new ArrayList<String>();
+//		
+//		ArrayList<String> secQ = new ArrayList<String>();
+//		
+//		ArrayList<String> secA = new ArrayList<String>();
+//		while (rs.next())
+//		 {
+//			 String lastname= rs.getString("lastname");
+//			 String fname1 = rs.getString("firstname");
+//			 int age = rs.getInt("age");
+//			 String usrname= rs.getString("username");
+//			 String pass1= rs.getString("password");
+//			 String secq1 = rs.getString("Securityqn");
+//			 String secAns1 = rs.getString("SecurityAns");
+//			 
+//			 //if (fname1.equals("Parker"))
+//			// {
+//				fname.add(fname1);
+//				lname.add(lastname);
+//				age1.add(age);
+//				userName.add(usrname);
+//				password.add(pass1);
+//				secQ.add(secq1);
+//				secA.add(secAns1);
+//				i++;
+//			// }
+//			 
+//		 }
+//		
+//		for (int f =0; f<i; f++)
+//		{
+//			System.out.println("First Name= "+fname.get(f)+"\tLast Name= "+lname.get(f)+"\tAGE= "+age1.get(f)+"\tUsername= "+userName.get(f)+"\tPassword= "+password.get(f)+"\tSecQuetion= "+secQ.get(f)+"\tSecAnswer= "+secA.get(f));
+//		}
+//		System.out.println("i ="+i);
+//
+//		ArrayList<String[]> names = new ArrayList<String[]>();
+//		names=getPatientsNameList();
+//		//for (int j = 0; j <2; j++)
+//		//{
+//		String names1[];
+//			for (int k=0; k<names.size();k++)
+//			{
+//				names1 = names.get(k);
+//				System.out.println("Frist Name:   "+names1[0]+"   Last Name:    "+names1[1]);
+//			}
+//			
+//		//}
+//		
+//}
+//  catch (SQLException e) 
+//{
+//	// TODO Auto-generated catch block
+//	e.printStackTrace();
+//}
+//}
