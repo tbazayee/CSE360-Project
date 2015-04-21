@@ -256,6 +256,18 @@ public class Database
 	  return name;
 	  
   }
+  
+  public void removePatientFromDB(String fname, String lname)
+  {
+  	 String sql1 = "DELETE from PATIENTDATA where firstname='"+fname+"' AND lastname='"+lname+"';";
+       try {
+		stmt.executeUpdate(sql1);
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+  }
+  
 }
 
 

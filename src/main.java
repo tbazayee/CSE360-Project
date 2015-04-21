@@ -22,9 +22,10 @@ public class main {
 		}
 		
 		ArrayList<String[]> names = new ArrayList<String[]>();
-		D1.addPatient("Jone", "DOe", 1, "JD", "pass", "City Born", "Minn", sypt, psypt1,psypt2, thresh);
+		D1.addPatient("Jone", "Doe1", 1, "JD", "pass", "City Born", "Minn", sypt, psypt1,psypt2, thresh);
 		names=D1.getPatientsNameList();
 		//for (int j = 0; j <2; j++)
+		D1.removePatientFromDB("Jone", "What");
 		//{
 		String names1[];
 			for (int k=0; k<names.size();k++)
